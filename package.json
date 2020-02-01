@@ -1,13 +1,13 @@
 {
-  "name": "server",
+  "name": "mearnapp",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec node server.js",
+    "start": "node server",
+    "client": "npm start --prefix client",
     "server": "nodemon server.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",

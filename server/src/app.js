@@ -1,5 +1,6 @@
 const express = require('express')
 const route = express.Router()
+const path = require('path')
 const mongoURI = require('config').get('mongoURI')
 const userRouter = require('../routes/user.routs')
 const profileRouter = require('../routes/profile.routs')
@@ -11,7 +12,7 @@ const logger = require('morgan')
 const app = express()
 
 // ------- config Mongo Data base --------------
-mongoose.connect( mongoURI , { useNewUrlParser: true , useCreateIndex: true, useUnifiedTopology: true } )
+mongoose.connect(process.env.MONGODB_URI || mongoURI , { useNewUrlParser: true , useCreateIndex: true, useUnifiedTopology: true } )
 mongoose.connection.on('connected' , ()=>{console.log('Data base connected...')})
 mongoose.connection.on('error' , ()=>{console.error('Couldnot connect to Data base...')})
 
@@ -28,6 +29,14 @@ app.use('/api/profile' , profileRouter )
 app.use('/api/posts' , postRouter )
 
 // -------- Errors------------------ throw err  or next(err) will deliver the error here
+
+
+if(process.env.NODE_ENV === 'production'){
+    app.use( express.static('client/build') )
+
+    app.get('*' , (req,res)=>{
+    res.sendFile(path.join(__dirname , 'client' , 'build' , 'index.html' ))
+})}
 
 app.use((req,res,next)=>{
     var err = new Error('Not Found..')

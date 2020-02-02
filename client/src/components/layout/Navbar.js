@@ -30,7 +30,7 @@ function Navbar() {
                         <span className="hide-sm"> Dashboard </span></Link>
                     </li>
                     <li>
-                        <Link to="/" title="Logout" onClick={e=>onClick(e)} >
+                        <Link to="/home" title="Logout" onClick={e=>onClick(e)} >
                         <i className="fas fa-sign-out-alt" />
                         <span className="hide-sm"  > Logout </span></Link>
                     </li>

@@ -18,6 +18,7 @@ import Comments from './components/posts/Comments';
 import Profiles from './components/profile/Profiles';
 import DevProfile from './components/profile/DevProfile';
 import checkAuth from './components/users/checkAuth';
+import Not_found from './components/layout/Not_found';
 
 function App() {
   const { userDispatch } = useContext(UserContext)
@@ -31,6 +32,7 @@ useEffect(()=>{
     <PostContextProvider>
       <Navbar/>
         <Switch>
+            <Route exact path='/' component={Landing}/>
             <Route exact path='/register' component={Register}/>
             <Route exact path='/login' component={Login}/>
 
@@ -42,7 +44,7 @@ useEffect(()=>{
             <PrivateRoute exact path='/comments' component={Comments} />
             <PrivateRoute exact path='/profiles' component={Profiles}/>
             <PrivateRoute exact path='/dev_profile/:id' component={DevProfile}/>
-            <Route  path='/' component={Landing}/>
+            <Route   component={Not_found}/>
         </Switch>
     </PostContextProvider>
     </ProfileContextProvider>

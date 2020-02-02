@@ -61,7 +61,7 @@ function Profile() {
                 </th></tr>
             </thead>
             <tbody>
-            {profileState.education.map((educ , index)=>{
+            {profileState.education.length > 1 ? profileState.education.map((educ , index)=>{
                 return (<tr key={index} >
                             <td>{educ.school}</td>
                             <td className="hide-sm">{educ.degree}</td>
@@ -72,7 +72,7 @@ function Profile() {
                                 <DeleteExp action={'Educ'}  id={educ._id} />
                             </td>
                         </tr>)
-            }).reverse() }
+            }).reverse() : <tr>No educations added yet. start add one</tr> }
             </tbody>
         </table>
         {/* <div className="my-2">

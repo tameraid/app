@@ -13,7 +13,7 @@ const app = express()
 
 // ------- config Mongo Data base --------------
 // process.env.MONGODB_URI ||
-mongoose.connect( mongoURI , { useNewUrlParser: true , useCreateIndex: true, useUnifiedTopology: true } )
+mongoose.connect( process.env.MONGODB_URI || mongoURI , { useNewUrlParser: true , useCreateIndex: true, useUnifiedTopology: true } )
 mongoose.connection.on('connected' , ()=>{console.log('Data base connected...')})
 mongoose.connection.on('error' , ()=>{console.error('Couldnot connect to Data base...')})
 

@@ -33,17 +33,17 @@ useEffect(()=>{
       <Navbar/>
         <Switch>
             <Route exact path='/' component={Landing}/>
-            <Route exact path='/register' component={Register}/>
-            <Route exact path='/login' component={Login}/>
+            <Route  path='/register' component={Register}/>
+            <Route  path='/login' component={Login}/>
 
-            <PrivateRoute exact path='/profile' component={Profile} />
-            <PrivateRoute exact path='/editprofile' component={EditProfile} />
-            <PrivateRoute exact path='/addexp' component={AddExp} />
-            <PrivateRoute exact path='/addeduc' component={AddEduc} />
-            <PrivateRoute exact path='/posts' component={Posts} />
-            <PrivateRoute exact path='/comments' component={Comments} />
-            <PrivateRoute exact path='/profiles' component={Profiles}/>
-            <PrivateRoute exact path='/dev_profile/:id' component={DevProfile}/>
+            <PrivateRoute  path='/profile' component={Profile} />
+            <PrivateRoute  path='/editprofile' component={EditProfile} />
+            <PrivateRoute  path='/addexp' component={AddExp} />
+            <PrivateRoute  path='/addeduc' component={AddEduc} />
+            <PrivateRoute  path='/posts' component={Posts} />
+            <PrivateRoute  path='/comments' component={Comments} />
+            <PrivateRoute  path='/profiles' component={Profiles}/>
+            <PrivateRoute  path='/dev_profile/:id' component={DevProfile}/>
             <Route   component={Not_found}/>
         </Switch>
     </PostContextProvider>

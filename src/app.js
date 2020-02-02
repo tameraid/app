@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended : true}))
 
 // -------- Routers------------------
 app.use('/api/users' , userRouter )
-app.use( '/' , authRouter )
+// app.use( '/' , authRouter )
 app.use('/api/profile' , profileRouter )
 app.use('/api/posts' , postRouter )
 

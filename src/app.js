@@ -34,7 +34,7 @@ app.use('/api/posts' , postRouter )
 
 if(process.env.NODE_ENV === 'production'){
 
-    app.use('/client', express.static(path.join(__dirname, 'build')))
+    app.use('/build', express.static(path.join(__dirname, 'client')))
 
     app.get('*' , (req,res)=>{
     res.sendFile(path.join('../client/build/index.html', {root: __dirname})

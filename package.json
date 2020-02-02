@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
+    "start": "node server.js",
     "client": "npm start --prefix client",
     "server": "nodemon server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
@@ -22,5 +22,9 @@
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
     "path": "^0.12.7"
+  },
+  "engines": {
+    "node": "v12.x"
   }
+  
 }

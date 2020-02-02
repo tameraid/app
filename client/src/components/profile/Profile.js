@@ -35,8 +35,8 @@ function Profile() {
             </tr>
             </thead>
             <tbody>
-            { profileState.experience.map((exp , index)=>{
-                return (<tr key={index} >
+            {profileState.experience.length > 0 ?  profileState.experience.map((exp , index)=>{
+                return ( exp.company !== '' ? <tr key={index} >
                             <td>{exp.company}</td>
                             <td className="hide-sm">{exp.jobTitle}</td>
                             <td className="hide-sm">
@@ -45,8 +45,8 @@ function Profile() {
                             <td>
                                 <DeleteExp action={'exp'}  id={exp._id} />
                             </td>
-                        </tr>)
-            }).reverse() }
+                        </tr> :  '' )
+            }).reverse() : <tr><td>No experience added yet. start add one</td></tr> }
 
             </tbody>
         </table>
@@ -61,7 +61,7 @@ function Profile() {
                 </th></tr>
             </thead>
             <tbody>
-            {profileState.education.length > 1 ? profileState.education.map((educ , index)=>{
+            {profileState.education.length > 0 ? profileState.education.map((educ , index)=>{
                 return (<tr key={index} >
                             <td>{educ.school}</td>
                             <td className="hide-sm">{educ.degree}</td>
@@ -72,7 +72,7 @@ function Profile() {
                                 <DeleteExp action={'Educ'}  id={educ._id} />
                             </td>
                         </tr>)
-            }).reverse() : <tr>No educations added yet. start add one</tr> }
+            }).reverse() : <tr><td>No educations added yet. start add one</td></tr> }
             </tbody>
         </table>
         {/* <div className="my-2">

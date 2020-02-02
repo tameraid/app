@@ -6,5 +6,4 @@ import UserContextProvider from './context/UserContext';
 
 ReactDOM.render( <BrowserRouter><UserContextProvider> <App /> </UserContextProvider></BrowserRouter> , document.getElementById('root'));
 
-import App from './App';
 

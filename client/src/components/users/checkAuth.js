@@ -7,7 +7,7 @@ const checkAuth = async(userDispatch)=>{
         localStorage.setItem('TOKEN' , token)
         try {
             axios.defaults.headers.common = { Authorization: `bearer ${token}` }
-            const {data} = await axios.get('/auth')
+            const {data} = await axios.get('/api/auth')
             userDispatch( { type : 'USER_LOADED' , user : data , token })
         } catch (error) {
             localStorage.removeItem('TOKEN')

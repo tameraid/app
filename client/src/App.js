@@ -32,7 +32,7 @@ useEffect(()=>{
     <PostContextProvider>
       <Navbar/>
         <Switch>
-            <Route exact path='/' component={Landing}/>
+            <Route exact path='/home' component={Landing}/>
             <Route  path='/register' component={Register}/>
             <Route  path='/login' component={Login}/>
 

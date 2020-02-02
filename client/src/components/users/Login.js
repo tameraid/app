@@ -34,7 +34,7 @@ function Login() {
           userDispatch({ type : 'SET_ALRET' , alretMsg : error.response.data.error , alretColor : '#F8D7DA'  })
       }
     }
-if(userState.isAuth) return <Redirect to='/'/>
+if(userState.isAuth) return <Redirect to='/home'/>
     return (
       <Fragment>
       <div style={{ height:'30px' }} >{ userState.loading && <Spinner/> }</div>

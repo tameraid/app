@@ -30,14 +30,15 @@ app.use('/api/profile' , profileRouter )
 app.use('/api/posts' , postRouter )
 
 // -------- Errors------------------ throw err  or next(err) will deliver the error here
-
+app.get('*' , (req,res)=>{
+    res.sendFile(path.resolve(__dirname , 'client' , 'build' , 'index1.html' ))
+})
 
 if(process.env.NODE_ENV === 'production'){
-
-    app.use('/build', express.static(path.join(__dirname, 'client')))
+    app.use( express.static(path.join(__dirname, 'client' , 'build')) )
 
     app.get('*' , (req,res)=>{
-    res.sendFile(path.join('../client/build/index.html', {root: __dirname})
+    res.sendFile(path.resolve(__dirname , 'client' , 'build' , 'index.html' ))
 })}
 
 app.use((req,res,next)=>{

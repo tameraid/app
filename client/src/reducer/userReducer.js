@@ -9,7 +9,6 @@ export const inituserState = {
     token : '',
     alretMsg : null ,
     alretColor : '' ,
-    logout : false
 }
 
 export const user_reducer = ( userState , action) =>{
@@ -26,6 +25,8 @@ export const user_reducer = ( userState , action) =>{
             return ({ ...userState , logout : true })
         case 'USER_LOADED':
             return ({ ...userState , loading : false , ...action , isAuth : true , user : action.user , token : action.token })
+        case 'LOGOUT':
+            return ({ ...userState , isAuth : null })            
         default:
             return userState
     }

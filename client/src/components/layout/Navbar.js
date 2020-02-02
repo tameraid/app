@@ -13,7 +13,7 @@ function Navbar() {
         <div>
             <nav className="navbar bg-dark">
                 <h1>
-                    <Link to="/"><i className="fas fa-code" /> DevConnector</Link>
+                    <Link to="/home"><i className="fas fa-code" /> DevConnector</Link>
                 </h1>
             { !userState.isAuth ?
                 (<ul>

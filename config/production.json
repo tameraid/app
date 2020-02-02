@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb://localhost:27017/mernapp",
+    "mongoURI": "mongodb+srv://tamer:tamer123456@cluster0-quepa.mongodb.net/test?retryWrites=true&w=majority",
     "jwtSecret": "MySecretToken"
   }

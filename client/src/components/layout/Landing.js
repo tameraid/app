@@ -14,6 +14,7 @@ function Landing() {
                     Create a developer profile/portfolio, share posts and get help from
                     other developers
                 </p>
+                <p className="lead" style={{ color:'#FFBC0A' , fontWeight:'bolder' }} >Build By Eng.Tamer Aid</p>
                 { !userState.isAuth &&
                     <div className="buttons">
                     <Link to="/register" className="btn btn-primary">Sign Up</Link>

@@ -31,8 +31,6 @@ app.use('/api/posts' , postRouter )
 
 // -------- Errors------------------ throw err  or next(err) will deliver the error here
 
-
-
 if(process.env.NODE_ENV === 'production'){
     app.use( express.static(path.join(__dirname, '../client' , 'build')) )
 
